@@ -16,7 +16,7 @@ def team():
     return render_template('team.html')
 
 @app.route('/profile')
-def logout():
+def profile():
     return render_template('index.html')
 
 
