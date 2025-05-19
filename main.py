@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory, render_template
+import os
+import json
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
@@ -18,6 +20,14 @@ def team():
 @app.route('/profile')
 def profile():
     return render_template('index.html')
+
+@app.route('/config')
+def config():
+    with open(os.path.join("..", "GoFlow", "config.json"), "r") as f:
+        data = f.read()
+        data = json.loads(data)
+    return render_template('config.html', data=data)
+
 
 
 
