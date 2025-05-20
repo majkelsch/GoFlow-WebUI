@@ -1,4 +1,11 @@
-<div class="sidenav">
+<div class="sidenav active">
+    <!-- Close button -->
+    <div style="display: flex; justify-content: flex-end; pointer-events: none;" class="closebtn">
+        <span onclick="closeNav()" style="font-size: 30px; color: white; width: 34px; text-align: center; vertical-align: middle; pointer-events: all;">&times;</span>
+    </div>
+    <div style="position: relative; display: flex; justify-content: flex-end; left: 34px; top: -34px; pointer-events: none;" class="openbtn">
+        <span onclick="openNav()" style="font-size: 30px; color: white; width: 34px; text-align: center; vertical-align: middle; pointer-events: all;">&gt;</span>
+    </div>
     <div class="logo">
         <img src="{{url_for('static', filename='images/logo-big.png')}}" alt="Logo">
     </div>

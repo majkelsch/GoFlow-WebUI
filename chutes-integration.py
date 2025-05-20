@@ -1,11 +1,15 @@
 import aiohttp
 import asyncio
 import json
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 async def invoke_chute(message:str):
-	with open("api_key.txt", "r") as file:
-		api_key = file.read().strip()
-	api_token = api_key
+	api_token = os.getenv("CHUTE_API_TOKEN")
+	if not api_token:
+		print("API token not found. Please set the CHUTE_API_TOKEN environment variable.")
+		return
 
 	headers = {
 		"Authorization": "Bearer " + api_token,
@@ -49,4 +53,5 @@ async def invoke_chute(message:str):
 						print(f"Error parsing chunk: {e}")
 			print(answer)
 
-asyncio.run(invoke_chute("Hello, how are you?"))
+def ai_invoke(message:str):
+	asyncio.run(invoke_chute(message))
