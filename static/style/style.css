@@ -1,15 +1,37 @@
+/*
+#########
+# BASIC #
+#########
+*/
+
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
     /*Temp*/
     background-color: #000;
+    font-family: "Poppins", sans-serif;
 }
 
 * {
-    display: block;
     margin: 0;
     padding: 0;
+}
+
+/*
+##############
+# TYPOGRAPHY #
+##############
+*/
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #fff;
 }
 
 
@@ -55,19 +77,58 @@ div.sidenav>div.nav-links {
 
 div.sidenav>div.nav-links>a {
     font-size: 1.1rem;
-    font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
     padding: 6px 12px;
-    border-radius: 8px;
-    border: 1px solid #ffffff1a;
+    /*border: 1px solid #ffffff1a;*/
+    border-left: 1px solid #ffffff1a;
     transition: all 0.3s ease;
 }
 
 div.sidenav>div.nav-links>a:hover {
-    color: #000;
-    background-color: #fff;
+    /*color: #000;
+    background-color: #fff;*/
     padding: 6px 16px;
-    border: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+
+
+
+
+/* Temp */
+div.content {
+    margin-left: 250px;
+    transition: all 0.3s ease;
+    color: white;
+    padding: 20px;
+}
+
+div.content.active {
+    margin-left: 0;
+}
+
+
+div.content>div.overview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div.content>div.overview>div.box {
+    width: calc(50% - 82px);
+    height: 100%;
+    min-height: 400px;   
+}
+
+
+
+div.box {
+    background-color: #111;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px #000;
 }

@@ -11,9 +11,24 @@
 
 <body>
     {% include 'sidenav.html' %}
-
-    <a href="{{url_for('logout')}}">Logout</a>
-
+    <div class="content">
+        <div class="profile">
+            <h1>Profile</h1>
+            <div class="box">
+                <img src="{{ userinfo['picture'] }}">
+                <div class="profile-info">
+                    <p><strong>Name:</strong> {{ userinfo['given_name'] }} {{ userinfo['family_name'] }}</p>
+                    <p><strong>Email:</strong> {{ userinfo['email'] }}</p>
+                </div>
+            </div>
+            <div class="box">
+                <p>Some more info and settings...</p>
+            </div>
+            <div class="box">
+                <a href="{{url_for('logout')}}">Logout</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
